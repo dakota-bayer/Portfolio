@@ -1,0 +1,69 @@
+html {
+    background: url("/images/background.jpg") #cccccc;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color: white;
+}
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+header > h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4.5em;
+    letter-spacing: 0.4em;
+    margin: 0;
+}
+
+#index-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#index-container > h2 {
+    font-size: 4em;
+    margin: auto;
+}
+
+#index-nav-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.index-nav-item{ 
+    max-width: 15em;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 1em;;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.index-nav-item h2{
+    font-size: 30px;
+}
+
+.index-nav-item p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.nav-photo {
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    height: 150px;
+}
