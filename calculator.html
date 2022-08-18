@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Calculator</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Archivo&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header id="header-bar">
+            <h1>drb</h1>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h2 class="page-title">
+            JavaScript Calculator
+        </h2>
+        <section id="calculator">
+            <div>
+                <input type="text" value = "0" id="result"/>
+                <input type="button" value = "C"/>
+            </div>
+            <div>
+                <input type="button" value = "7" onclick="keyPress(7)"/>
+                <input type="button" value = "8" onclick="keyPress(8)"/>
+                <input type="button" value = "9" onclick="keyPress(9)"/>
+                <input type="button" value = "/" onclick="keyPress('/')"/>
+            </div>
+            <div>
+                <input type="button" value = "4"/>
+                <input type="button" value = "5"/>
+                <input type="button" value = "6"/>
+                <input type="button" value = "X" onclick="keyPress('*')"/>
+            </div>
+        </section>
+        <!-- fix footer !!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <footer>
+            <p>
+                dakota.bayer.com <br /> (fake URL)
+            </p>
+        </footer>
+    </body>
+</html>
+
+<script>
+    function keyPress(key){
+        switch(typeof key){
+            case "number":{
+                //add to running string
+                updateScreen(key);
+                concatString(key);
+                //alert("number");
+                break;
+            }
+            case "string":{
+                // begin next operand
+                // evalute symbol
+                alert("string");
+                break;
+            }
+            default: {
+                alert("key type not available");
+                break;
+            }
+        }
+    }
+
+    function updateScreen(num){
+        document.getElementById("result").value = num;
+    }
+
+    function concatString(num){
+        var currentOutput = document.getElementById("result").value;
+        var result = currentOutput + num.toString();
+        document.getElementById("result").value = result;
+    }
+
+    function caculate(num1, num2, operand){
+        var result = 0;
+        switch(operand){
+            case "/":{
+                result = num1 / num2;
+                break;
+            }
+            case "*":{
+                result = num1 * num2;
+                break;
+            }
+            case "+":{
+                result = num1 + num2;
+                break;
+            }
+            case "-": {
+                result = num1 - num2;
+                break;
+            }
+        }
+        return result;
+    }
+</script>
