@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JSON Test</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Archivo&family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    </head>
+
+    <style>
+    .container {
+        display: grid;
+        width: 400px;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 30px 30px 30px 30px;
+        margin: auto;
+        border: solid;
+    }
+    .item{
+        margin: 10px;
+    }
+    .item-description{
+        justify-self: start;
+    }
+    .item-value{
+        justify-self: start;
+    }
+    </style>
+
+    <body>
+        <header id="header-bar">
+            <h1>drb</h1>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h2 class="page-title">
+            JSON Test
+        </h2>
+
+        <section class="container">
+                <p class="item item-description">Net Sales</p>
+                <p class="item item-value" id="net-sales"></p>
+                <p class="item item-description">Cost Of Sales</p>
+                <p class="item item-value" id="cost-of-sales"></p>
+                <p class="item item-description">Gross Margin</p>
+                <p class="item item-value" id="gross-margin"></p>
+        </section>
+
+        <footer>
+            <p>
+                dakota.bayer.com <br /> (fake URL)
+            </p>
+        </footer>
+    </body>
+</html>
+
+<script>
+    let companiesJSON = `[
+        {
+            "netSales": 7547822.1,
+            "costOfSales": 5222703.49,
+            "grossMargin": 109349.2,
+            "rating": 3.6
+        },
+        {
+            "name": "Small Town Business",
+            "numberOfEmployees": 6,
+            "CEO": null,
+            "rating": 4.9
+        }
+    ]`
+
+   
+
+    let companies = JSON.parse(companiesJSON);
+
+    console.log(companies);
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("net-sales").innerHTML = companies[0].netSales;
+        document.getElementById("cost-of-sales").innerHTML = companies[0].costOfSales;
+        document.getElementById("gross-margin").innerHTML = companies[0].grossMargin;
+    }, false);
+
+</script>
